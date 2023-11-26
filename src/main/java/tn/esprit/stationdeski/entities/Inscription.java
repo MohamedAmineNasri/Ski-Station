@@ -1,9 +1,6 @@
 package tn.esprit.stationdeski.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
@@ -18,4 +15,10 @@ public class Inscription implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long numInscription;
     private int numSemaine;
+
+    @ManyToOne
+    private Skieur skieur;
+
+    @ManyToOne
+    private Cours cours;
 }

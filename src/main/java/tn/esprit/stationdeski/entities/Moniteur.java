@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -20,5 +21,8 @@ public class Moniteur implements Serializable {
     private String prenomM;
     @Temporal(TemporalType.DATE)
     private Date dateRecru;
+
+    @OneToMany
+    private List<Cours> cours;
 }
 

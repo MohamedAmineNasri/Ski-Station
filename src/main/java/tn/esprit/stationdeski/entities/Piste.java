@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -20,4 +22,7 @@ public class Piste implements Serializable {
     private Couleur couleur;
     private int longeur;
     private int pente;
+
+    @ManyToMany
+    private List<Skieur> skieurs;
 }

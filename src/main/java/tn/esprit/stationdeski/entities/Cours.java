@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -22,4 +23,7 @@ public class Cours implements Serializable {
     private Support support;
     private float prix;
     private int creneau;
+
+    @OneToMany(mappedBy = "cours")
+    private Set<Inscription> inscription;
 }
