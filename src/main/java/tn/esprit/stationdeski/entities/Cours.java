@@ -1,5 +1,6 @@
 package tn.esprit.stationdeski.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +24,7 @@ public class Cours implements Serializable {
     private Support support;
     private float prix;
     private int creneau;
+
 
     @OneToMany(mappedBy = "cours")
     private Set<Inscription> inscription;

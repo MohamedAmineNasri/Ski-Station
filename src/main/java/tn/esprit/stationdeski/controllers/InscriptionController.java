@@ -33,4 +33,14 @@ public class InscriptionController  {
     public void deleteInscription(@PathVariable long idi) {
         inscriptionServiceImp.deleteInscription(idi);
     }
+
+    @PostMapping("/addInscriptionAndAssignSkuer/{numSkirur}")
+    public  Inscription addInscriptionAndAssignSkuer(@RequestBody Inscription inscription, @PathVariable long numSkirur){
+        return inscriptionServiceImp.addInscriptionAndAssignSkuer(inscription,numSkirur);
+    }
+
+    @PostMapping("/assignRegistrationToCourse/{numCours}")
+    public Inscription assignRegistrationToCourse(@RequestBody Inscription inscription, @PathVariable long numCours) {
+        return inscriptionServiceImp.assignRegistrationToCourse(inscription,numCours);
+    }
 }

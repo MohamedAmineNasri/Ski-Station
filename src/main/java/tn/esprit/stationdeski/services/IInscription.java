@@ -11,4 +11,9 @@ public interface IInscription {
     public List<Inscription> findAllInscriptions();
     public Inscription findById(long idi);
     public void deleteInscription(long idi);
+
+    public Inscription addInscriptionAndAssignSkuer(Inscription inscription , long  numSkirur);
+
+    public Inscription assignRegistrationToCourse(Inscription inscription, long numCours);
+
 }
